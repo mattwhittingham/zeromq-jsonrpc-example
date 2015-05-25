@@ -1,6 +1,6 @@
 # zeromq-jsonrpc-example
-example using jsonrpc over zeromq
-experimenting with c++ and zeromq
+example and expermiment using jsonrpc over zeromq
+
 
 run app-broker
 run 3 instances of app -p 5560
