@@ -4,15 +4,10 @@
 #include <unistd.h>
 
 
-#include "mysql_connection.h"
 #include "zmq-server-connector.h"
 
 #include <jsonrpccpp/server.h>
 
-#include <cppconn/driver.h>
-#include <cppconn/exception.h>
-#include <cppconn/resultset.h>
-#include <cppconn/statement.h>
 
 using namespace jsonrpc;
 using namespace std;
@@ -77,48 +72,5 @@ int main(int argc, char *argv[])
     {
         cerr << e.what() << endl;
     }
-    // zmq::context_t context (1);
-    // zmq::socket_t socket (context, ZMQ_REP);
-    // socket.bind ("tcp://*:5555");
-
-    // while (true) {
-    //     zmq::message_t request;
-
-    //     //  Wait for next request from client
-    //     socket.recv (&request);
-    //     std::cout << "Received Hello" << std::endl;
-
-    //     //  Do some 'work'
-    //     // sleep(1);
-
-    //     //  Send reply back to client
-    //     zmq::message_t reply (5);
-    //     memcpy ((void *) reply.data (), "World", 5);
-    //     socket.send (reply);
-    // }
     return 0;
-    // sql::Driver *driver;
-    // sql::Connection *con;
-    // sql::Statement *stmt;
-    // sql::ResultSet  *res;
-
-    // driver = get_driver_instance();
-    // con = driver->connect("tcp://127.0.0.1:3306", "root", "");
-    // con->setSchema("spinminute");
-
-    // stmt = con->createStatement();
-    // res = stmt->executeQuery("SELECT 'Hello World!' AS _message");
-
-    // while (res->next()) {
-	   //  std::cout << "\t... MySQL replies: ";
-	   //  /* Access column data by alias or column name */
-	   //  std::cout << res->getString("_message") << std::endl;
-	   //  std::cout << "\t... MySQL says it again: ";
-	   //  /* Access column fata by numeric offset, 1 is the first column */
-	   //  std::cout << res->getString(1) << std::endl;
-    // }
-
-    // delete res;
-    // delete stmt;
-    // delete con;
 }
